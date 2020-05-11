@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GenericAndJson {
-
+//json字符串的处理
     private static ObjectMapper mapper;
 
     @Autowired
