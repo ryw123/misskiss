@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    password: 123456
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/missyou?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    database: mysql
+
+
