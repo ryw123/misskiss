@@ -1,10 +1,21 @@
 server:
   port: 8081
 spring:
+  application:
+    name: missyou
   datasource:
     password: 123456
     username: root
     url: jdbc:mysql://192.168.10.157:3306/missyou?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+# log
+logging:
+  file: /home/renyanwei/systemsoftware/java/logs/${spring.application.name}.log
+  errorFile: /home/renyanwei/systemsoftware/java/logs/${spring.application.name}_error.log
+  fileMaxHistory: 30
+  fileMaxSize: 64MB
+  pattern:
+    console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID} ${spring.application.name}){magenta} %clr(---){faint} %clr([%X{ip}]){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID} ${spring.application.name} --- [%X{ip}] [%t] %-40.40logger{39} : %m%n%wEx'
 
 
   jpa:
